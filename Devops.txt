@@ -1,0 +1,147 @@
+What is Devops ? It is an approch to develop an software. Quality Software. Withought any bugs. And you know there is frequent changes in the software is going on.  
+
+ 
+
+Previously we use waterfall model to develop the software.  Requirement design implemntaing verigication maintanece.  
+
+Advantage of watefall model.  
+
+Simple to understand and use 
+
+You can do easu testing 
+
+But it is good for small project where requirement are clearly defined 
+
+Disadvantage: 
+
+It is risky 
+
+Lack of visibility 
+
+Not good when requirement changes 
+
+The end product is avaialble at the end of cuycle 
+
+Aguke : where same process requirement gathereing design development testing and maintaince. But the duration is 2 to 8 week.  
+
+They use to release the application with high priority features.  
+
+Disadvantage of Agile 
+
+Highly depend on custom requirement 
+
+Not suitable for complex project 
+
+No documentation 
+
+Increase maintanibily and risk.  
+
+SDLC- software development life cycle.  
+
+ 
+
+To overcome this chllanges Devops has come. Where you develop and application with set of engineer. Wheere you have the developer and operation tema work together.  
+
+But to do the same we use different tools.  
+
+There are multiple stages in devops 
+
+Devops Has Change the architecture of your Application. We are moving to monolothical to micro services.  
+
+What is monolothical---everything has been tightly integrated together.  
+
+Micro service:  
+
+Changing the existing architecture from monolothical to micro service is not an easy task. It is like re architecting your application. And recreate from the scratch. To build an micro service we required multiple programmer having knowledge on different langauge.  
+
+Manual compilation will not work. We need to build our application with autmated features.  
+
+Communicatiion between the micro services is a challenges. When we convert my application to micro service we need more number of server.  
+
+Docker podman. Complexity increase. Automation kubernetes. It is also an micro service with complexity. Openshift. Again complexity comes.  
+
+ 
+
+We need to resolves our challenges one by one using automation.  
+
+Complaince 
+
+They cannot make mistake.  
+
+What is Microservices.  
+
+Contnues Development : this is the core of an Devops Life cycle. In this developer commit the code more frequenty to an version control system. Once they commit it will be build autmatically. It allow you to early detection of problem if they are present. Not only that you do code revie unit testing integrating testing and packing.  
+
+Continues testing : jenkins selenium testng junit. This is the stage where your develop software check for bugs using autmated testing tools. User acceptance testing.  
+
+Contnues Integration 
+
+Contunes testing 
+
+Contnues Deployment : consist of two things. This si the stage where we deploy our code into multiple stages in the environment dev test uat prod and we want that correctly we have deployed the software. Same application need to be deployed in multiple environment before it goes for production. If I do it manuallly. We need autmation. Same application deployed in multiple server same time and everywhere the environment will be similar.  
+
+Chef,ansible,puppet 
+
+ 
+
+Ansible is used for updating an running environment. I want to deploy  a patch or update my application with new app. Or I want to change the configuration file in all the nodes.  
+
+Terraform. + packer : using a single script you just need to give terraform up. It will aumatically launch a server deploy your application. It will give you an update what are the changes it is don’t. it is a provisioing tools.  
+
+ 
+
+ 
+
+version control system 
+build it 
+test it 
+develope 
+ansible 
+terraform which will 
+autmatically pro vision 
+your en vironmentfor 
+the first time 
+ 
+
+Screen clipping taken: 4/25/2021 11:26 PM 
+
+ 
+
+ 
+
+Configuration management : chef puppet ansible 
+
+Containerization : docker 
+
+Continues Monitoring 
+
+DevSecOps: security is also included in devops.  
+
+Sec Operation 
+
+Sec in Development 
+
+Devops 
+Development Team + IT Operation 
+SecOps 
+Security Team 
+DevSecOps 
+Ip Operation 
+Dev+security+opeation 
+ 
+
+Screen clipping taken: 4/25/2021 11:56 PM 
+
+ 
+
+Security is an threat in the entiere devops lifecycle.  
+
+Devops is agile 
+
+SecOPs- every member of development cyle team is aware of reponsiblity of security.  
+
+As per devops there is frequent change in code. - security is concern . Someone do sql injection. We use tools to do the same.  
+
+Sonarqube or sonar scanner.  
+
+ 
