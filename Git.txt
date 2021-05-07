@@ -1,0 +1,242 @@
+Why you need version control ? 
+
+What are two different type of version control ? 
+
+ 
+
+Distributed and Centralized  version control ssytem.  
+
+Centralized version control system :  
+
+centralized version control system 
+if your central server 
+goes down hdd 
+curupted all the 
+resource we will loose 
+now a days we cannot be 
+online all the time. 
+whenever they want to version it 
+they will need to connect with 
+main server for versioing 
+they need to be online to do the 
+versiomg. 
+ 
+
+Screen clipping taken: 4/26/2021 12:11 AM 
+
+ 
+
+We need offline solution 
+
+Git is a version control system which is distributed. And you can work offline.  
+
+Software development also. CNCF - All the application development is following CNCF.  
+
+Now a days application development is being done using Cloud native foundation . You develop an application and it can be deployed in any of the cloud service provider.  
+
+IBM Resiliency Architecture.  
+
+Using this tool you can manage multiple cloud.  
+
+ 
+
+To install git linux mac or windows.  
+
+Why in operation we need git ? 
+
+Everything is code now a days. That is the reason . Infrastructure as code.  
+
+Ansible Playbook are code 
+
+Terraform manifest file are code.  
+
+Human being are lazy ?  
+
+Software developer they create application our job is deploy the application. Most of the time the environment is simlar.  
+
+We want to reuse the code as much as possible. To do the same git is one of the best tool available 
+
+ 
+
+Or this may be called as project folder. Similar to developer who create a workspace to create his project. Inside the project folder we need to manage all our file. 
+
+ 
+
+Git command 
+
+ 
+
+Build by linux travolta -  
+
+It is opensource.  
+
+The biggest project which is being handled by git is linux.  
+
+You got branching.  
+
+Withought distbuing your existing code.  
+
+ 
+
+[root@ip-172-31-14-74 test]# history 
+
+    1  yum install git 
+
+    2  git --version 
+
+    3  mkdir test 
+
+    4  cd test/ 
+
+    5  ls 
+
+    6  git status 
+
+    7  git init 
+
+    8  git status 
+
+    9  ls -la 
+
+   10  cd .git 
+
+   11  ls 
+
+   12  cd .. 
+
+   13  rm -rf .git 
+
+   14  git status 
+
+   15  history 
+
+  
+
+Git first operation 
+
+ 16  touch autho 
+
+   17  touch dsstore 
+
+   18  touch calc.py 
+
+   19  git status 
+
+   20  git init 
+
+   21  git add calc.py 
+
+   22  git commit -m "my first caly program" 
+
+   23  git config --global user.name "gopal" 
+
+   26  git config --global user.email "gopal1409" 
+
+   27  git status 
+
+   29  git log 
+
+ 
+
+central remote 
+if we deploy a code in 
+production. and i got 
+a bug in the code. 
+whom to contaict 
+next time whenever we 
+create a new version we 
+this config value will be 
+autmatically attached with 
+ur code. 
+git config user. name and 
+user. emailid 
+ 
+
+Screen clipping taken: 4/26/2021 1:06 AM 
+
+ 
+
+How git can ignore you file 
+
+ 32  git status 
+
+   33  touch .gitignore 
+
+   34  vi .gitignore 
+
+   35  git status 
+
+ 
+
+git add calc.py 
+git add. - whatever file you have in working directory will 
+ove to stagi area or git add -A 
+this will move your 
+calc. py file to the 
+staging area. 
+git commit -m "first 
+commit" 
+any file which is there 
+in the staging area 
+will be commited. or a 
+version will be created 
+calc. py 
+dsstore. 
+in git terminology we called it 
+working directory 
+we will create a file 
+called as 
+. gitignore 
+ 
+
+Screen clipping taken: 4/26/2021 1:14 AM 
+
+ 
+
+Second changes 
+
+7  vi calc.py 
+
+    8  git status 
+
+    9  git add . 
+
+   10  git commit -m "added a function" 
+
+ 
+
+   12  git push -u origin master 
+
+ 
+
+Check the difference between previous and this commit 
+
+  14  vi calc.py 
+
+   15  git diff 
+
+   16  git checkout calc.py 
+
+   17  git diff 
+
+ 
+
+ 
+
+Git ammend 
+
+ 
+
+38  touch newcaly.py 
+
+   39  git add . 
+
+   40  git commit -m "new calcy program" 
+
+   41  git log 
+
+ 
+
+   43  git commit --amend 
+
+   44  git log 
