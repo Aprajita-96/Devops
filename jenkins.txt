@@ -1,0 +1,61 @@
+Jenkins 
+
+How to integrate Jenkins with Git 
+
+Jenkins is an tools build using Java  
+
+The min requirement to install Jenkisn jdk  
+
+ 
+
+42  yum install java-1.8.0-openjdk 
+
+   43  yum install java-1.8.0-openjdk-devel 
+
+   44  yum install wget 
+
+ 
+
+   46  wget -O /etc/yum.repos.d/jenkins.repo     https://pkg.jenkins.io/redhat-stable/jenkins.repo 
+
+   47   rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key 
+
+   48  yum install jenkins 
+
+   49  systemctl start jenkins 
+
+   50  systemctl enable jenkins 
+
+   51  systemctl status jenkins 
+
+   52  history 
+
+How jenkins is going to conusme your code and do a build process.  
+
+ 
+
+To do the same we need to create Jobs in jenkins 
+
+ 
+
+Discard old build : when you build an application a war or jar file creaed.  
+
+Role strategy pluging.  
+
+ 
+
+Build periodically : 15 min every 15 min if there Is change or no change it is going to build it  
+
+Poll SCM- source code management- every 15 min it is going go to git check for any changes in your application .  
+
+Using jenkins whenever you build an application- it is going to create a folder in your machine .  
+
+ 
+
+Cd /var/lib/jenkins 
+
+ 
+
+The difference beween a user and role is that user will have password based authentication 
+
+Role can be assumed it is similar to user but can be assumed. If you don’t create a role you cannot attach an user.  
