@@ -1,0 +1,107 @@
+Kubernetes give you clustering solution. Which is an additional service which run on top of container engine 
+
+ 
+
+All the services of kubernetes run on top of container engine.  
+
+Open shift is build on top of k8s 
+
+ 
+
+When we talk about containe runtime 
+
+It can be docker 
+
+Virtlet 
+
+Minivm 
+
+ 
+
+It is not like that docker if the only container run it . We have other container engine.  
+
+Non IBM Middle.  
+
+Tomcat-  
+
+ 
+
+Organization: but they have limitation.  
+
+In the cloud there is not limitation " they charge you for the number of connection  
+
+500 50000 
+
+On premises : you have juniper or polo alto.  
+
+Limitation : when you are running a huge microservices.  
+
+ 
+
+Existing load balancer will faile on managing session.  
+
+ 
+
+Pod in kuberentes : in kubernetes we know that all the communication to your k8s cluster will strictly done using kubeapi server. So kubernetes do not understand what is container. We need to invoke an API Pod which will help us to deploy my workload in k8s.  
+
+ 
+
+ 
+
+Speaking: gopal 
+fro 
+nodejs 
+nd 
+logic angular 
+if you have a multi container app that also can be 
+deployed using pod 
+database 
+independet servi 
+message que 
+for every service in 
+microservice will be an 
+individual pod. 
+mam 
+map 
+O 
+promothus 
+service mesh 
+istio 
+managmg session 
+ 
+
+Screen clipping taken: 4/28/2021 4:03 AM 
+
+ 
+
+Kubectl get pod 
+
+Oc get pod 
+
+ 
+
+Every plugin has its own benefit : some plugin just allow you to do ingress routing. Some of them allow you to do egress routing. Some them allow you to do BGP>  do TSL encrytion 
+
+We will deploy a plugin called as calico - fannel and calium-  
+
+ 
+
+359  kubeadm init --pod-network-cidr=192.168.0.0/16 
+
+  360  mkdir -p $HOME/.kube 
+
+  361    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config 
+
+  362    sudo chown $(id -u):$(id -g) $HOME/.kube/config 
+
+  363  kubectl get nodes 
+
+  364  docker ps 
+
+  365  kubectl get nodes 
+
+  366  kubectl create -f https://docs.projectcalico.org/manifests/tigera-operator.yaml 
+
+  367  kubectl create -f https://docs.projectcalico.org/manifests/custom-resources.yaml 
+
+ 
