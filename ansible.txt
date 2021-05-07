@@ -1,0 +1,324 @@
+When we talk about configuration management.  
+
+There are two type of system one is push based another is pull based system.  
+
+ 
+
+Ansible Push Based System 
+figurati 
+How the authentication work in push 
+based system. 
+keypair based you generate a key in 
+master save the private key in worker. 
+Pull Based System 
+Master Server 
+confitu 
+Configruation 
+Configuration 
+Test in one of 
+machine 
+ChefDK 
+Expand pal 
+if you want to apply a immedaite it cant be done 
+ 
+
+Screen clipping taken: 4/27/2021 12:11 AM 
+
+ 
+
+Emc 
+
+Glusterfs 
+
+IBM 
+
+Netapp 
+
+ZFS 
+
+ 
+
+How to install ansible 
+
+ 131  yum install epel-release 
+
+  132  yum install ansible 
+
+  133  ssh-keygen -t rsa 
+
+When you install ansible autmatically an configuration file and an inventory file is geeting stored in /etc/ansible 
+
+ 
+
+This is called as static inventory.  
+
+Dynamic Inventory : in cloud we will always have dynamic inventory.  
+
+ 
+
+Ping is  a module develop in python. Which ansible already have it in the system when we install ansible.  
+
+master 
+worker 
+ssh based authentication 
+by default in amazon icmp is block 
+it upload an module 
+called a ping 
+the same in 
+worker node 
+we got an reply back 
+this ping module is 
+develop using python 
+ 
+
+Screen clipping taken: 4/27/2021 1:14 AM 
+
+ 
+
+Our icmp protocol is block but how I am pinging my woker node using ansible.  
+
+ 
+
+Ansible worker -m ping 
+
+ansible worker - 
+module but which 
+module to use we put 
+first look into a file 
+at the end ping 
+called as an le.cfg 
+module 
+worker 
+ansible.cfg tell him to 
+lookfor an in ntory 
+file 
+inside the pani lar 
+directy we need to 
+have a host 
+ 
+
+Screen clipping taken: 4/27/2021 1:17 AM 
+
+ 
+
+Gather fact 
+
+ 
+
+Ansible by default running the setup module to get your system information and update the patch according to it.  
+
+Idopetence.  
+
+So if your apache server is running on few of the some of the server it is down.  
+
+It will skip the running server and start only the server where it is not running.  
+
+ 
+
+Where did this fact module will not work.  
+
+There are lot of networking and firewall system which do not use python. Or having there own operating system  
+
+Junos or polo alto.  
+
+Gather_fact = false 
+
+ 
+
+ 
+
+The command which we have run till know it is also called as ansible ad hoc command 
+
+Ansible hostgroup module argument  to the module 
+
+Suppose I want to see the uptime of all the system 
+
+ 
+
+131  ansible worker -m command -a uptime 
+
+  132  ansible worker -m shell -a uptime 
+
+  133  ansible worker -a uptime 
+
+  134  ansible worker -a "free -m" 
+
+  135  ansible worker -m file -a "path=/tmp/x state=directory mode=0755" 
+
+  136  ansible worker -m group -a "name=weblogic state=present" 
+
+  137  ansible worker -m user -a "name=weblogic group=weblogic createhome=yes" 
+
+  138  ansible -m file -a "path=/tmp/x group=weblogic owner=weblogic" 
+
+  139  ansible worker -m file -a "path=/tmp/x group=weblogic owner=weblogic" 
+
+ 
+
+ 
+
+Ansible install a package 
+
+133  ansible all -m yum -a "name=httpd state=installed" 
+
+  134  ansible all -m yum -a "name=httpd state=install" 
+
+  135  ansible all -m service -a "name=httpd state=started enabled=yes" 
+
+  136  ansible all -m service -a "name=httpd state=start enabled=yes" 
+
+ 
+
+I want to install a apache packe 
+
+Start and enable the httpd service.  
+
+Install firewalld 
+
+Start and enable firewalld service 
+
+Permit http service at friewall 
+
+We have a webpage need to install  
+
+Give a name to the webserver 
+
+Update some entry in /etc/hosts file 
+
+ 
+
+To overcome this challenge where I want to run multiple task  
+
+We can use a script.  
+
+Ansible has something called as playbook where we can run our task.  
+
+To do the same we need to write down a playbook. Using yaml 
+
+ 
+
+ 
+
+--- 
+
+ 
+
+ 
+
+# YAML documents begin with the document separator --- 
+
+ 
+
+# The minus in YAML this indicates a list item. The playbook contains a list  
+
+ 
+
+# of plays, with each play being a dictionary 
+
+ 
+
+- 
+
+ 
+
+# Target: where our play will run and options it will run with 
+
+ 
+
+# Variable: variables that will apply to the play, on all target systems 
+
+ 
+
+# Task: the list of tasks that will be executed within the play, this section 
+
+ 
+
+# can also be used for pre and post tasks 
+
+ 
+
+# Handlers: handlers that are executed as a notify key from a task 
+
+ 
+
+# Roles: list of roles to be imported into the play 
+
+ 
+
+# Three dots indicate the end of a YAML document 
+
+ 
+
+... 
+
+ReplyForward 
+
+ 
+
+From <https://mail.google.com/mail/u/0/#inbox/KtbxLzfphpWTQLVqWkfbDVncJjGLBNmhrg>  
+
+ 
+
+Handle will execute only if there is some changes.  
+
+ 
+
+176  cd test/ 
+
+  177  vi task.yaml 
+
+  178  ansible-playbook task.yaml 
+
+  179  git add . 
+
+  180  git commit -m "ansible task" 
+
+  181  git push -u origin master 
+
+  182  ls 
+
+  183  git push -u origin main 
+
+  184  git push -u origin master 
+
+  185  git push -u origin master --force 
+
+  186  ls 
+
+  187  ansible-playbook task 
+
+  188  ansible-playbook task.yaml 
+
+  189  vi task.yaml 
+
+  190  ansible-playbook --syntax-check task.yaml 
+
+  191  git add . 
+
+  192  git commit -m "second task" 
+
+  193  git push -u origin master 
+
+  194  ansible-playbook task.yaml 
+
+  195  history 
+
+[root@ip-172-31-14-74 test]# 
+
+ 
+
+ 
+
+Line in file: this is a module in ansible you have an existing and replace an existing with some custom line.  
+
+I hve an configuration I want to make changes some of the value in the configuration file 
+
+ 
+
+Ansible Documentation 
+
+ 
+
+https://github.com/gopal1409/masteringansible.git 
+
+ 
